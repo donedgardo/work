@@ -1,0 +1,13 @@
+<!-- Index.html Website index/home -->
+<html ng-app="exampleWeb">
+  <head>
+    <title>ExampleWebsite</title>
+  </head>
+  <body>
+    <div>
+    </div>
+    <script src="
+  </body>
+
+
+</html>
