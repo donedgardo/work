@@ -4,5 +4,6 @@
 
 ###ToDo:
 
--Set up Bootstrap.
--Set up layout for mobile and desktop ranges of screensize.
+..*Set up layout for mobile and desktop ranges of screensize.
+..*Add sign in capability to owner and clients.
+..*Add forms for owner and clients to create/delete/edit user forms.
