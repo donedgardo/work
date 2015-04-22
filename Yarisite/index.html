@@ -1,17 +1,40 @@
 <!-- Index.html Website index/home -->
 <html ng-app="exampleWeb">
   <head>
+  
+    <meta charset="utf-8">
+    <metta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The avbove meta tags are required first for bootstrap -->
+
     <title>ExampleWebsite</title>
+
+    <!--Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
   </head>
-  <body>
+
+  <body ng-controller="MainCtrl as ctrl">
+  
     <div>
       {{3+1}}
     </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (bellow, or include individual files as needed -->
     <script src="node_modules/angular/angular.js"></script>
 
     <script type="text/javascript">
-      angular.module("exampleWeb", []);
+      angular.module("exampleWeb", [])
+        .controller('MainCtrl', [function () {
+		this.username="nothing";
+		}]);
     </script> 
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"</script>
+
   </body>
 
 
