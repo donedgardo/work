@@ -4,6 +4,6 @@
 
 ###ToDo:
 
-  * Set up layout for mobile and desktop ranges of screensize.
+  * Style nav_pannel and main_container.
   * Add sign in capability to owner and clients.
   * Add forms for owner and clients to create/delete/edit user forms.

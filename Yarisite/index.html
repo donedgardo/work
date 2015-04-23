@@ -1,9 +1,9 @@
 <!-- Index.html Website index/home -->
-<html ng-app="exampleWeb">
+<html ng-app="yariWeb">
   <head>
   
     <meta charset="utf-8">
-    <metta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The avbove meta tags are required first for bootstrap -->
 
@@ -12,13 +12,43 @@
     <!--Bootstrap -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
   </head>
 
   <body ng-controller="MainCtrl as ctrl">
-  
-    <div>
-      {{3+1}}
+    
+    <!-- Logo/Header --> 
+    <div id="logo">
+      <div>
+	    <img id="logo_img" class="align-right" src="img/logo.png" float="left"></img>
+	    <h3>Yarimar Jim&eacutenez </br>Photography</h3>
+	    <h5>Freelance Photographer</h5>
+      </div>
     </div>
+    <!-- End Logo/Header -->
+
+    <div class="row">
+      <!-- Navigation Panel -->
+      <div id="nav_panel" class="col-md-3">
+		    <!-- Placeholders for actual buttons that render views in Main container of the site -->
+		    <p>Home</p>
+		    <p>Weddings</p>
+		    <p>Portraits</p>
+		    <p>Event</p>
+		    <p>Travel</p>
+		    <p>About</p>
+      </div>
+    <!-- End Navigation Panel -->
+
+    <!-- Main container where it will render photos depending what button was cliked -->
+      <div id="main_container" class="col-md-9">
+      {{ctrl.username}}
+      </div>
+    </div>
+    <!-- End main container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -27,7 +57,7 @@
     <script src="node_modules/angular/angular.js"></script>
 
     <script type="text/javascript">
-      angular.module("exampleWeb", [])
+      angular.module("yariWeb", [])
         .controller('MainCtrl', [function () {
 		this.username="nothing";
 		}]);
