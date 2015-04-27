@@ -25,3 +25,42 @@ h5{
 #main_container{
 	float: right;
 }
+
+/*Form for clients style*/
+
+.firstName.ng-valid{
+	border-color: green;
+}
+
+.firstName.ng-dirty.ng-invalid-required{
+	border-color: red;
+}
+
+.lname.ng-valid{
+	border-color: green;
+}
+
+.lname.ng-dirty.ng-invalid-required{
+	border-color: red;
+}
+
+.cemail.ng-valid{
+	border-color: green;
+}
+
+.cemail.ng-dirty.ng-invalid{
+	border-color: pink;
+}
+
+.cemail.ng-dirty.ng-invalid-required{
+	border-color: red;
+}
+
+
+.cpassword.ng-valid{
+	border-color: green;
+}
+
+.cpassword.ng-dirty.ng-invalid-required{
+	border-color: red;
+}

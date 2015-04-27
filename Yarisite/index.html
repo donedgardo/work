@@ -47,9 +47,46 @@
     <!-- Main container where it will render photos depending what button was cliked -->
       <div id="main_container" class="col-md-9">
 	      <div ng-show="ctrl.mainContent==='clients'">
-		      Create client
+		      Create client:
+		      <form ng-submit="ctrl.submit()" name="clientForm">
+			      <input type="text"  
+			         class="firstName"
+			         name="fname"
+				 ng-model="ctrl.client.firstName" 
+				 placeholder = "First Name"
+				 required>
+				 </br>
+
+			      <input type="text"  
+			         name="lname" 
+				 class="lname"
+				 ng-model="ctrl.client.lastName" 
+				 placeholder = "Last Name"
+				 required>
+				 </br>
+
+			      <input type="email"
+			         name="clientemail"
+				 class="cemail"
+			         ng-model="ctrl.client.email"
+				 placeholder = "Clients' Email"
+				 required>
+				 </br>
+
+			      <input type="text"  
+			         ng-model="ctrl.client.password" 
+				 class="cpassword"
+				 placeholder = "Clients' password"
+				 name="cpassword"
+				 required>
+				 </br>
+			      <input type="text"
+			         ng-model="ctrl.client.note"
+				 placeholder= "Clients' note">
+				 </br>
+			      <input type="submit" value="Submit" ng-disabled="clientForm.$invalid">
+	      	      </form>
 	      </div>
-      {{ctrl.username}}
       </div>
     </div>
     <!-- End main container -->
@@ -67,6 +104,10 @@
 
 		//This variable will trigger ng-show to display the main container with the right content.
 		self.mainContent="home";
+
+		self.submit = function(){
+		  console.log(self.client);
+		};
 
 
 		}]);
