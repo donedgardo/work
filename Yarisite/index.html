@@ -40,11 +40,15 @@
 		    <p>Event</p>
 		    <p>Travel</p>
 		    <p>About</p>
+		    <p><a ng-click="ctrl.mainContent='clients'">Clients</a></p>
       </div>
     <!-- End Navigation Panel -->
 
     <!-- Main container where it will render photos depending what button was cliked -->
       <div id="main_container" class="col-md-9">
+	      <div ng-show="ctrl.mainContent==='clients'">
+		      Create client
+	      </div>
       {{ctrl.username}}
       </div>
     </div>
@@ -59,7 +63,12 @@
     <script type="text/javascript">
       angular.module("yariWeb", [])
         .controller('MainCtrl', [function () {
-		this.username="nothing";
+		self = this;
+
+		//This variable will trigger ng-show to display the main container with the right content.
+		self.mainContent="home";
+
+
 		}]);
     </script> 
 
