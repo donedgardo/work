@@ -50,19 +50,29 @@
 	    <!--Main Content for Clients Navigator -->
 	    <div ng-switch on="ctrl.mainContent">
 
-	      <!-- When admin hits clients nav -->
+	      <!-- When user hits home/default page -->		    
+	      <div ng-switch-when="home">
+		      Home
+	      </div>
+	      <!-- End Home on main content -->
+
+	      <!-- When user hits clients nav -->
 	      <div ng-switch-when="clients">
 
 	              <!--If user is admin this will show -->
 	      	      <div ng-show="ctrl.user.admin">
 
 		      <!--This button will make Client forms show -->
-		      <button ng-click="ctrl.showClientForm=true">Create client:</button>
-		      <form ng-submit="ctrl.submit()" name="clientForm" ng-show="ctrl.showClientForm">
+		      <div ng-controller="ClientCtrl as cctrl">
+		        <button ng-click="cctrl.showClientForm=true" ng-show="!cctrl.showClientForm">
+			      Create client:
+		        </button>
+		      <form ng-submit="cctrl.submit()" name="clientForm" ng-show="cctrl.showClientForm">
+			      <h4>Create Client Form</h4>
 			      <input type="text"  
 			         class="firstName"
 			         name="fname"
-				 ng-model="ctrl.client.firstName" 
+				 ng-model="cctrl.client.firstName" 
 				 placeholder = "First Name"
 				 required>
 				 </br>
@@ -70,7 +80,7 @@
 			      <input type="text"  
 			         name="lname" 
 				 class="lname"
-				 ng-model="ctrl.client.lastName" 
+				 ng-model="cctrl.client.lastName" 
 				 placeholder = "Last Name"
 				 required>
 				 </br>
@@ -78,24 +88,25 @@
 			      <input type="email"
 			         name="clientemail"
 				 class="cemail"
-			         ng-model="ctrl.client.email"
+			         ng-model="cctrl.client.email"
 				 placeholder = "Clients' Email"
 				 required>
 				 </br>
 
 			      <input type="text"  
-			         ng-model="ctrl.client.password" 
+			         ng-model="cctrl.client.password" 
 				 class="cpassword"
 				 placeholder = "Clients' password"
 				 name="cpassword"
 				 required>
 				 </br>
 			      <input type="text"
-			         ng-model="ctrl.client.note"
+			         ng-model="cctrl.client.note"
 				 placeholder= "Clients' note">
 				 </br>
 			      <input type="submit" value="Submit" ng-disabled="clientForm.$invalid">
 	      	      </form>
+	              </div>
 		      <!--End client form -->
 
 	              </div>
@@ -104,7 +115,7 @@
 	      <!--End clients navigator -->
 
 	      <!-- Main content for Clients navigation when user is not logged in -->
-	      <div ng-show="ctrl.mainContent==='clients' && !ctrl.user" >
+	      <div ng-show="!ctrl.user" >
 	      </div>
       </div>
       <!--End switch for mainContent -->
@@ -129,13 +140,20 @@
 
 		self.open = function(tab){
 		  self.mainContent=tab;
+
+		  //Test for debug.
+		  console.log(self.mainContent + " is the selected tab.\n");
 		};
-		
-		//This should be in a Sub Controller.
-		self.showClientForm=false;
 
-
-		}]);
+	}])
+	.controller('ClientCtrl', [function() {
+		self = this;
+		self.user;
+		self.showClientForm=false;		
+		self.submit = function (){
+		    console.log(self.user);
+		};
+	}]);
     </script> 
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"</script>
