@@ -40,15 +40,25 @@
 		    <p>Event</p>
 		    <p>Travel</p>
 		    <p>About</p>
-		    <p><a ng-click="ctrl.mainContent='clients'">Clients</a></p>
+		    <p><a ng-click="ctrl.open('clients')">Clients</a></p>
       </div>
     <!-- End Navigation Panel -->
 
     <!-- Main container where it will render photos depending what button was cliked -->
       <div id="main_container" class="col-md-9">
-	      <div ng-show="ctrl.mainContent==='clients'">
-		      Create client:
-		      <form ng-submit="ctrl.submit()" name="clientForm">
+
+	    <!--Main Content for Clients Navigator -->
+	    <div ng-switch on="ctrl.mainContent">
+
+	      <!-- When admin hits clients nav -->
+	      <div ng-switch-when="clients">
+
+	              <!--If user is admin this will show -->
+	      	      <div ng-show="ctrl.user.admin">
+
+		      <!--This button will make Client forms show -->
+		      <button ng-click="ctrl.showClientForm=true">Create client:</button>
+		      <form ng-submit="ctrl.submit()" name="clientForm" ng-show="ctrl.showClientForm">
 			      <input type="text"  
 			         class="firstName"
 			         name="fname"
@@ -86,8 +96,18 @@
 				 </br>
 			      <input type="submit" value="Submit" ng-disabled="clientForm.$invalid">
 	      	      </form>
+		      <!--End client form -->
+
+	              </div>
+	              <!-- End user with admin privileges -->
+	      </div>
+	      <!--End clients navigator -->
+
+	      <!-- Main content for Clients navigation when user is not logged in -->
+	      <div ng-show="ctrl.mainContent==='clients' && !ctrl.user" >
 	      </div>
       </div>
+      <!--End switch for mainContent -->
     </div>
     <!-- End main container -->
 
@@ -102,12 +122,17 @@
         .controller('MainCtrl', [function () {
 		self = this;
 
+		self.user = { admin: true};
+
 		//This variable will trigger ng-show to display the main container with the right content.
 		self.mainContent="home";
 
-		self.submit = function(){
-		  console.log(self.client);
+		self.open = function(tab){
+		  self.mainContent=tab;
 		};
+		
+		//This should be in a Sub Controller.
+		self.showClientForm=false;
 
 
 		}]);
