@@ -17,10 +17,9 @@ angular.module("yariWeb", [])
 }])
 .controller('ClientCtrl', [function() {
 	self = this;
-	self.user;
 	self.showClientForm=false;		
 	self.submit = function (){
-		console.log(self.user);
+		console.log(self.client);
 	};
 }]);
 

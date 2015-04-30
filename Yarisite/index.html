@@ -33,21 +33,21 @@
     <div class="row">
       <!-- Navigation Panel -->
       <div id="nav_panel" class="col-md-3">
-		    <!-- Placeholders for actual buttons that render views in Main container of the site -->
-		    <p>Home</p>
-		    <p>Weddings</p>
-		    <p>Portraits</p>
-		    <p>Event</p>
-		    <p>Travel</p>
-		    <p>About</p>
-		    <p><a ng-click="ctrl.open('clients')">Clients</a></p>
+		<!-- Placeholders for actual buttons that render views in Main container of the site -->
+		<p><a ng-click="ctrl.open('home')">Home<a></p>
+		<p><a ng-click="ctrl.open('weddings')">Weddings</a></p>
+		<p><a ng-click="ctrl.open('potraits')">Portraits</a></p>
+		<p><a ng-click="ctrl.open('events')">Event</a></p>
+		<p><a ng-click="ctrl.open('travels')">Travel</a></p>
+		<p><a ng-click="ctrl.open('about')">About</a></p>
+		<p><a ng-click="ctrl.open('clients')">Clients</a></p>
       </div>
     <!-- End Navigation Panel -->
 
     <!-- Main container where it will render photos depending what button was cliked -->
       <div id="main_container" class="col-md-9">
 
-	    <!--Main Content for Clients Navigator -->
+	    <!--Main Content controlled by the ng-switch -->
 	    <div ng-switch on="ctrl.mainContent">
 
 	      <!-- When user hits home/default page -->		    
