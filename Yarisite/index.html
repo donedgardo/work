@@ -128,34 +128,9 @@
     <!-- Include all compiled plugins (bellow, or include individual files as needed -->
     <script src="node_modules/angular/angular.js"></script>
 
-    <script type="text/javascript">
-      angular.module("yariWeb", [])
-        .controller('MainCtrl', [function () {
-		self = this;
-
-		self.user = { admin: true};
-
-		//This variable will trigger ng-show to display the main container with the right content.
-		self.mainContent="home";
-
-		self.open = function(tab){
-		  self.mainContent=tab;
-
-		  //Test for debug.
-		  console.log(self.mainContent + " is the selected tab.\n");
-		};
-
-	}])
-	.controller('ClientCtrl', [function() {
-		self = this;
-		self.user;
-		self.showClientForm=false;		
-		self.submit = function (){
-		    console.log(self.user);
-		};
-	}]);
-    </script> 
-
+    <!-- Script includes most of the angular js work -->
+    <script src="app.js"></script>
+    
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"</script>
 
   </body>
