@@ -17,8 +17,8 @@ module.exports = function(config) {
     files: [
 	  'node_modules/angular/angular.js',
   	  'node_modules/angular/angular-mocks.js',
-	  'controllerSpec.js',
-	  'index.html'
+	  '*.js',
+	  '*.html'
     ],
 
 
@@ -41,7 +41,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 9876,
+    port: 8080,
 
 
     // enable / disable colors in the output (reporters and logs)
