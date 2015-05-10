@@ -28,6 +28,9 @@ angular.module("yariWeb", ["ngRoute"])
 	.when('/about', {
 		template:'<h5>About</h5>'
 	})
+	.when('/travels', {
+		template:'<h5>Travels</h5>'
+	})
 	.when('/clients', {
 		template:'<h5>Clients</h5>'
 	})
