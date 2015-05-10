@@ -16,25 +16,24 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
 
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="styles/custom.css" rel="stylesheet">
 
   </head>
 
   <body ng-app="yariWeb" ng-controller="MainCtrl as ctrl">
     
     <!-- Logo/Header --> 
-    <div id="logo">
-      <div>
+
+    <div id="sidebar" class="col-md-3">
+      <div id="logo">
 	    <img id="logo_img" class="align-right" src="img/logo.png" float="left"></img>
 	    <h3>Yarimar Jim&eacutenez </br>Photography</h3>
 	    <h5>Freelance Photographer</h5>
       </div>
-    </div>
     <!-- End Logo/Header -->
 
-    <div class="row">
       <!-- Navigation Panel -->
-      <div id="nav_panel" class="col-md-3">
+      <div id="nav_panel">
 		<!-- Placeholders for actual buttons that render views in Main container of the site -->
 		<p><a href="#/">Home<a></p>
 		<p><a href="#/weddings">Weddings</a></p>
@@ -44,6 +43,7 @@
 		<p><a href="#/about">About</a></p>
 		<p><a href="#/clients">Clients</a></p>
       </div>
+    </div>
     <!-- End Navigation Panel -->
 
     <!-- Main container where it will render photos depending what button was cliked -->
@@ -126,7 +126,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <!-- Script includes most of the angular js work -->
-    <script src="app.js"></script>
+    <script src="scripts/app.js"></script>
     
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"</script>
 

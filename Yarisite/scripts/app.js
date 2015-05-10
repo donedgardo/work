@@ -23,10 +23,10 @@ angular.module("yariWeb", ["ngRoute"])
 		template:'<h5>Portraits</h5>'
 	})
 	.when('/events', {
-		template:'<h5>Portraits</h5>'
+		template:'<h5>Events</h5>'
 	})
 	.when('/about', {
-		template:'<h5>About</h5>'
+		templateUrl:'views/about.html'
 	})
 	.when('/travels', {
 		template:'<h5>Travels</h5>'
