@@ -1,8 +1,14 @@
 /* Global Styles */
 
-h3{
+#nav_panel,ul,li{
+      list-style:none;
+      margin-left:-12px;
 }
 
+#nav_panel,ul{
+	margin-top:-10px;
+}
+	
 
 #logo_img{
 	float:left;
@@ -24,6 +30,7 @@ h5{
 
 #main_container{
 	float: right;
+	margin-top:100px;
 }
 
 /*About image*/

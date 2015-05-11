@@ -1,0 +1,48 @@
+<!--This button will make Client forms show -->
+        <button ng-click="cctrl.showClientForm=true" ng-show="!cctrl.showClientForm">
+	      Create client:
+        </button>
+	      <form ng-submit="cctrl.submit()" name="clientForm" ng-show="cctrl.showClientForm">
+		      <h4>Create Client Form</h4>
+		      <input type="text"  
+		         class="firstName"
+		         name="fname"
+			 ng-model="cctrl.client.firstName" 
+			 placeholder = "First Name"
+			 required>
+			 </br>
+
+		      <input type="text"  
+		         name="lname" 
+			 class="lname"
+			 ng-model="cctrl.client.lastName" 
+			 placeholder = "Last Name"
+			 required>
+			 </br>
+
+		      <input type="email"
+		         name="clientemail"
+			 class="cemail"
+		         ng-model="cctrl.client.email"
+			 placeholder = "Clients' Email"
+			 required>
+			 </br>
+
+		      <input type="text"  
+		         ng-model="cctrl.client.password" 
+			 class="cpassword"
+			 placeholder = "Clients' password"
+			 name="cpassword"
+			 required>
+			 </br>
+
+		      <input type="text"
+		         ng-model="cctrl.client.note"
+			 placeholder= "Clients' note">
+			 </br>
+			 
+		      <input type="submit" value="Submit" ng-disabled="clientForm.$invalid">
+      	      </form>
+      </div>
+      <!--End client form -->
+

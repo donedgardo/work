@@ -1,17 +1,5 @@
 angular.module("yariWeb", ["ngRoute"])
-.controller('MainCtrl', [function () {
-	self = this;
-	self.user = { admin: true};
-
-}])
-.controller('ClientCtrl', [function() {
-	self = this;
-	self.showClientForm=false;		
-	self.submit = function (){
-		console.log(self.client);
-	};
-}])
-.config(['$routeProvider',function($routeProvider) {
+.config(function($routeProvider) {
 
 	$routeProvider.when('/', {
 		template:'<h5>This is the default route</h5>'
@@ -32,8 +20,9 @@ angular.module("yariWeb", ["ngRoute"])
 		template:'<h5>Travels</h5>'
 	})
 	.when('/clients', {
-		template:'<h5>Clients</h5>'
+		templateUrl:'views/clients.html',
+		controller:'ClientCtrl as cctrl'
 	})
 	.otherwise({redirectTo: '/'});
-}]);
+});
 

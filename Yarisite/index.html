@@ -40,98 +40,33 @@
 		<p><a href="#/portraits">Portraits</a></p>
 		<p><a href="#/events">Event</a></p>
 		<p><a href="#/travels">Travel</a></p>
-		<p><a href="#/about">About</a></p>
+		<p id=about_link"><a href="#/about">About</a></p>
+		  <ul>
+			  <li><a href="#/blog">Blog</a></li>
+			  <li><a href="#/ad">Ad</a></li> 
+	          </ul>
 		<p><a href="#/clients">Clients</a></p>
       </div>
+      <!-- End Navigation Panel -->
     </div>
-    <!-- End Navigation Panel -->
+    <!-- End Sidebar -->
 
     <!-- Main container where it will render photos depending what button was cliked -->
       <div id="main_container" class="col-md-9">
 
-	    <!--Main Content controlled by the ng-switch -->
-	    <div ng-switch on="ctrl.mainContent">
+	    <!--Main Content -->
+	    <div ng-view></div>
 
-	      <!-- End Home on main content -->
-
-	      <div ng-view></div>
-
-	      <!-- When user hits clients nav -->
-	      <div ng-switch-when="clients">
-
-	              <!--If user is admin this will show -->
-	      	      <div ng-show="ctrl.user.admin">
-
-		      <!--This button will make Client forms show -->
-		      <div ng-controller="ClientCtrl as cctrl">
-		        <button ng-click="cctrl.showClientForm=true" ng-show="!cctrl.showClientForm">
-			      Create client:
-		        </button>
-		      <form ng-submit="cctrl.submit()" name="clientForm" ng-show="cctrl.showClientForm">
-			      <h4>Create Client Form</h4>
-			      <input type="text"  
-			         class="firstName"
-			         name="fname"
-				 ng-model="cctrl.client.firstName" 
-				 placeholder = "First Name"
-				 required>
-				 </br>
-
-			      <input type="text"  
-			         name="lname" 
-				 class="lname"
-				 ng-model="cctrl.client.lastName" 
-				 placeholder = "Last Name"
-				 required>
-				 </br>
-
-			      <input type="email"
-			         name="clientemail"
-				 class="cemail"
-			         ng-model="cctrl.client.email"
-				 placeholder = "Clients' Email"
-				 required>
-				 </br>
-
-			      <input type="text"  
-			         ng-model="cctrl.client.password" 
-				 class="cpassword"
-				 placeholder = "Clients' password"
-				 name="cpassword"
-				 required>
-				 </br>
-			      <input type="text"
-			         ng-model="cctrl.client.note"
-				 placeholder= "Clients' note">
-				 </br>
-			      <input type="submit" value="Submit" ng-disabled="clientForm.$invalid">
-	      	      </form>
-	              </div>
-		      <!--End client form -->
-
-	              </div>
-	              <!-- End user with admin privileges -->
-	      </div>
-	      <!--End clients navigator -->
-
-	      <!-- Main content for Clients navigation when user is not logged in -->
-	      <div ng-show="!ctrl.user" >
-	      </div>
       </div>
-      <!--End switch for mainContent -->
-    </div>
-    <!-- End main container -->
+      <!-- End main container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
     <!-- Script includes most of the angular js work -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/controller.js"></script>
     
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"</script>
-
   </body>
-
-
-
 </html>
