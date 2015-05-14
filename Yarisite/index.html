@@ -12,25 +12,22 @@
     <!--Bootstrap -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Include all compiled plugins (bellow, or include individual files as needed -->
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
 
+    <!-- Custom CSS -->
     <link href="styles/custom.css" rel="stylesheet">
-
   </head>
 
   <body ng-app="yariWeb" ng-controller="MainCtrl as ctrl">
     
-    <!-- Logo/Header --> 
-
+    <!-- Begin Sidebar -->
     <div id="sidebar" class="col-md-3">
+      <!-- Logo/Header --> 
       <div id="logo">
 	    <img id="logo_img" class="align-right" src="img/logo.png" float="left"></img>
 	    <h3>Yarimar Jim&eacutenez </br>Photography</h3>
 	    <h5>Freelance Photographer</h5>
       </div>
-    <!-- End Logo/Header -->
+      <!-- End Logo/Header -->
 
       <!-- Navigation Panel -->
       <div id="nav_panel">
@@ -38,7 +35,7 @@
 		<p><a href="#/">Home<a></p>
 		<p><a href="#/weddings">Weddings</a></p>
 		<p><a href="#/portraits">Portraits</a></p>
-		<p><a href="#/events">Event</a></p>
+		<p><a href="#/events">Events</a></p>
 		<p><a href="#/travels">Travel</a></p>
 		<p id=about_link"><a href="#/about">About</a></p>
 		  <ul>
@@ -52,21 +49,26 @@
     <!-- End Sidebar -->
 
     <!-- Main container where it will render photos depending what button was cliked -->
-      <div id="main_container" class="col-md-9">
-
-	    <!--Main Content -->
-	    <div ng-view></div>
-
-      </div>
-      <!-- End main container -->
+    <div id="main_container" class="col-md-9">
+        <!--Main Content -->
+	
+      <div class='container' ng-view></div>
+	
+    </div>
+    <!-- End main container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-    <!-- Script includes most of the angular js work -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controller.js"></script>
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"</script>
-  </body>
+    <!-- Include all compiled plugins (bellow, or include individual files as needed -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>  
+    <script src="scripts/controller.js"></script>
+
+    </body> 
+
 </html>

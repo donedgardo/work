@@ -1,0 +1,10 @@
+<h2>Portraits</h2>
+<div class="carousel-slide" ng-controller="CarouselCtrl as carouselCtrl">
+  <carousel interval="carouselCtrl.myInterval">
+    <slide ng-repeat="slide in carouselCtrl.portraits_slides" active="slide.active">
+       <img id="img_carousel" ng-src="{{slide.image}}">
+    </slide>
+  </carousel>
+</div>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
