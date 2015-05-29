@@ -1,5 +1,6 @@
 <div class="animated slideInDown">
 <!--This button will make Client forms show -->
+	<span ng-show="cctrl.userIsLoggedIn">Client logged in</span>
         <button ng-click="cctrl.showClientForm=true" ng-show="!cctrl.showClientForm">
 	      Create client:
         </button>

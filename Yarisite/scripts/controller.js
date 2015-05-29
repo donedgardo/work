@@ -76,11 +76,22 @@ angular.module("yariWeb")
   ];
 }])
 
-.controller('ClientCtrl', [function() {
+.controller('ClientCtrl', ["$http", function($http) {
 	self = this;
 	self.showClientForm=false;		
+	self.user;
+	self.userIsLoggedIn = false;
 	self.submit = function (){
 		console.log(self.client);
+		
 	};
+
+	$http.get('/user').then(function (response){
+		self.userIsLoggedIn = response.data;
+	}, function(errResponse){
+		console.error("Error fetching isLogged status");
+	});
+	
+		
 }]);
 
